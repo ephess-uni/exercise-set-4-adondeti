@@ -21,8 +21,8 @@ def time_between_shutdowns(logfile):
     """
     shutdowns = get_shutdown_events(logfile)
     date_feature = shutdowns.split()[1]
-    first_shutdown_time = logstamp_to_datetime(shutdowns[0].split()[1])
-    last_shutdown_time = logstamp_to_datetime(shutdowns[-1].split()[1])
+    first_shutdown_time = logstamp_to_datetime(shutdowns[0][1])
+    last_shutdown_time = logstamp_to_datetime(shutdowns[-1][1])
 
     time_diff = last_shutdown_time - first_shutdown_time
 
