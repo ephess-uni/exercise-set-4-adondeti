@@ -13,7 +13,16 @@ def get_shutdown_events(logfile):
     """
     Your docstring here.  Replace the pass keyword below with your implementation
     """
-    pass
+    shutdown_events = []
+
+    with open(logfile) as file:
+        for log in file:
+            if "Shutdown initiated" in log:
+                shutdown_events.append(log)
+    return shutdown_events
+                
+                
+                
 
 
 # >>>> The code below will call your function and print the results
